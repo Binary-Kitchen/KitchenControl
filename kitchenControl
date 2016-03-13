@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+from PyQt4 import QtGui
+from PyQt4.QtCore import QUrl
+import signal
+import sys
+
+import mainwindow
+
+class KitchenControl(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
+    def __init__(self):
+        super(self.__class__, self).__init__()
+        self.setupUi(self)
+        self.left.load(QUrl('http://homer.binary.kitchen:8080'))
+        self.right.load(QUrl('http://matrix.binary.kitchen'))
+
+
+def main():
+    app = QtGui.QApplication(sys.argv)
+    form = KitchenControl()
+    form.showFullScreen()
+    app.exec_()
+
+
+if __name__ == '__main__':
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    main()
