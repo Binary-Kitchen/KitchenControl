@@ -11,6 +11,9 @@ class KitchenControl(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
+        self.load()
+
+    def load(self):
         self.left.load(QUrl('http://homer.binary.kitchen:8080'))
         self.right.load(QUrl('http://matrix.binary.kitchen'))
 
