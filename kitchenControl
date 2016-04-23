@@ -20,7 +20,7 @@ class KitchenControl(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.load()
 
     def load(self):
-        self.left.load(QUrl('http://homer.binary.kitchen:8080'))
+        self.left.load(QUrl('http://homer.binary.kitchen'))
         self.right.load(QUrl('http://matrix.binary.kitchen'))
 
 
